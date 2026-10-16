@@ -57,7 +57,7 @@ def get_package_distribution_mapping() -> dict[str, list[str]]:
     doesn't pay ~1-3s scanning RECORD files (torch 2.14 ships no `top_level.txt`).
 
     Respects test patches that set `PACKAGE_DISTRIBUTION_MAPPING` directly: if the module
-    namespace contains a dict under that name, it wins. Clear the cache in tests with
+    namespace contains a dict under that name, it wins. Clear the cache in tests / after installs with
     `_cached_packages_distributions.cache_clear()`.
     """
     override = globals().get("PACKAGE_DISTRIBUTION_MAPPING")
